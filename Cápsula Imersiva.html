@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C.E.S.T.A - Cápsula Imersiva</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Open+Sans:wght@400;600&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #023b73, #064e97);
+            color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #001f3f;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header h1 {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header p {
+            font-size: 1.2em;
+        }
+
+        nav {
+            background-color: #001f3f;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            border-bottom: 2px solid #003366;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+            transition: color 0.3s, border-bottom 0.3s;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav a:hover {
+            color: #1e90ff;
+            border-bottom: 2px solid #1e90ff;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #1e90ff;
+        }
+
+        section p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #1e90ff;
+            color: #ffffff;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #1a7bcc;
+        }
+
+        .testimonials {
+            background-color: #023b73;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 40px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .testimonials h2 {
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .testimonials p {
+            color: #e0f7fa;
+            font-style: italic;
+        }
+
+        .testimonials .author {
+            margin-top: 10px;
+            color: #1e90ff;
+            font-weight: bold;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .social-icons a {
+            color: #ffffff;
+            margin: 0 10px;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #1e90ff;
+        }
+
+        footer {
+            background-color: #001f3f;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            border-top: 2px solid #003366;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .surpresa {
+            background-color: #e0f7fa;
+            color: #00796b;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            margin-top: 40px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .product-layout {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-top: 30px;
+            background: #023b73;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .product-layout img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .product-layout img:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            header .header-content {
+                flex-direction: column;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            nav a {
+                margin: 5px;
+                font-size: 16px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            .surpresa {
+                padding: 20px;
+            }
+
+            .product-layout img {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 10px 0;
+                text-align: center;
+            }
+
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            header p {
+                font-size: 0.9em;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                margin: 5px 0;
+                font-size: 14px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            .surpresa {
+                padding: 15px;
+            }
+
+            .product-layout img {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+        <h1>C.E.S.T.A - Cápsula Imersiva</h1>
+        <p>Transformando a experiência imersiva</p>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#sobre-nos">Sobre Nós</a>
+        <a href="#como-funciona">Como Funciona</a>
+        <a href="#valores">Valores</a>
+        <a href="#layout-produto">Layout do Produto</a>
+        <a href="#metodos-fabricacao">Métodos de Fabricação</a>
+        <a href="#montagem">Montagem</a>
+    </nav>
+
+    <div class="container">
+        <section id="sobre-nos">
+            <h2>Sobre Nós</h2>
+            <p>A C.E.S.T.A nasceu quando um grupo de estudantes da Escola Tecnica Estadual do municipio de Rio Grande da Serra, cada uma com suas ideias e habilidades, se juntou para criar algo novo. Desde o começo, todo mundo se dividiu nas tarefas: alguns focaram nos métodos de fabricação, outros calcularam os custos, e teve quem cuidou do design da nossa máquina.</p>
+            <p>A gente também deu atenção especial para ter um site bacana e um perfil no Instagram, onde mostramos o que estamos fazendo e nossos avanços. Aqui, a gente trabalha como uma família, sempre juntos, buscando o melhor resultado possível.</p>
+            <p>Tudo que a gente fez até agora é fruto de muito esforço e dedicação de cada um. Estamos super orgulhosos de mostrar para todo mundo o que criamos juntos.</p>
+            
+          
+        </section>
+        
+        <hr style="border: 1px solid #003366;">
+
+        <section id="como-funciona">
+            <h2>Como Funciona a Cápsula Imersiva</h2>
+            <p>A nossa invenção, a Cápsula Imersiva, permite que o cliente faça uma verdadeira viagem no tempo ou explore qualquer lugar do mundo, tanto no passado quanto no futuro, de forma totalmente imersiva. Para isso, a cápsula utiliza tecnologias avançadas como realidade virtual, projeções holográficas e sons.</p>
+            <p>Na parte externa da nossa máquina é possível fazer o pagamento com o auxílio da voz do nosso robô, permitindo que o cliente escolha algum tempo ou um lugar. Após o pagamento, a Cápsula se abre, e o cliente é transportado para uma nova realidade, com vídeos/imagens imersivas nas quatro paredes, teto e chão, complementados por sons e aromas do local.</p>
+            <p>O cliente pode escolher uma época específica, como o Egito Antigo, a Roma Antiga, ou mesmo um cenário futurístico. Para aumentar a imersão, um colar especial que emitirá cheiros será disponibilizado, permitindo que o cliente sinta os aromas do ambiente em que está imerso.</p>
+        </section>
+        
+        <hr style="border: 1px solid #003366;">
+
+        <section id="valores">
+            <h2>Valores</h2>
+            <p>Os nossos preços variam muito de acordo com o lugar e o tempo que o cliente desejar. O valor mais acessível seria em torno de R$ 3.500,00, e esse valor já inclui o auxílio do nosso robô e também os aromas que serão sentidos dentro da nossa Cápsula Imersiva.</p>
+            <p>Lembrando que esse valor se encaixa somente para alguns 'tempos', como o Egito Antigo, ou para um futuro próximo, como Naves voadoras. O valor irá mudar caso o cliente queira ir para algum lugar do mundo, para um país específico ou um estado. Nesses casos, o valor seria em torno de R$ 1.000,00 a R$ 2.500,00.</p>
+            <p>Quanto ao tempo de uso, o valor é fixo somente para 1 hora. Caso o cliente queira passar mais tempo experimentando a nossa máquina, será cobrada uma taxa adicional de R$ 500,00 por hora.</p>
+        </section>
+
+        <hr style="border: 1px solid #003366;">
+
+        <section id="layout-produto">
+            <h2>Layout do Produto</h2>
+            <p>O layout da nossa Cápsula Imersiva é moderno e sofisticado, com acabamentos em tons metálicos e uma estrutura robusta que transmite segurança e inovação. O colar especial, por sua vez, é elegante e discreto, pensado para ser confortável e funcional, permitindo que o usuário sinta os aromas do ambiente imersivo sem desconforto.</p>
+            <div class="product-layout">
+                <img src="https://i.pinimg.com/736x/2c/f1/66/2cf166f14588eab604597f64b1c69e26.jpg" alt="Cápsula Imersiva">
+                <img src="https://i.pinimg.com/736x/55/56/65/555665a5d8b9abba646adee557b6915f.jpg" alt="Colar Especial">
+            </div>
+        </section>
+
+        <hr style="border: 1px solid #003366;">
+
+        <section id="metodos-fabricacao">
+            <h2>Métodos de Fabricação</h2>
+            
+            <p>CÁPSULA DO TEMPO: </p>
+
+<p> Materiais utilizados:  Ligas de alumínio, Aço inoxidável, vidro temperado, ligas de titânio e projeções holográficas. </p>
+            
+            <p> ROBÔ ARION: </p>
+
+ <p>Materiais Utilizados: Polímeros leves, ligas metálicas, placas, baterias, software, hardware, sensores de alta precisão como câmeras, microfones/alto falantes e sensores de movimento. </p>
+            
+            <p>APARELHO DE SOM PARA TRANSMISSÃO DE SOM DE LOCAIS:</p>
+            
+            <p>Materiais: Alto-falantes Subwoofer, madeira resistentes, Circuitos eletrônicos como transistores, resistores, capacitores, e outros componentes eletrônicos </p>
+            
+            <p> APARELHO DE CHEIRO PARA TRANSMISSÃO DE AROMAS DE LOCAIS:</p>
+            
+            <p>Materiais Utilizados: Microcápsulas e sensores olfativos </p>
+            
+            <p>COLAR DE MUDANÇA DE VESTIMENTA E CORES: </p>
+            
+            <p>Materiais utilizados: Diamante azul, Polímeros de alta resistência, titânio, sensores de movimento, microfone, microprocessador e tecido inteligente.</p>
+            
+             <hr style="border: 1px solid #003366;">
+        </section>
+        
+        <section id="montagem">
+            <h2>Montagem</h2>
+            
+            <p>CÁPSULA DO TEMPO:</p>
+            
+            <p>Fresadora CNC: Utilizada para usinar as ligas de alumínio e aço inoxidável, criando a estrutura externa da cápsula e o painel de controle. A fresadora é ideal para moldar peças com precisão e realizar cortes complexos em materiais metálicos. <br>
+
+CNC de Corte a Laser: Usada para cortar o vidro temperado para as janelas de observação da cápsula, garantindo cortes precisos e seguros. <br>
+
+Torno CNC: Para a criação de componentes cilíndricos ou rotativos, como eixos e partes do motor que exigem alta resistência, especialmente feitos de ligas de titânio. <br> </p> 
+            
+            <p>Robô Arion:</p>
+
+<p>Fresadora CNC: Para moldar as ligas metálicas que compõem a estrutura do robô, garantindo precisão e resistência. <br>
+
+Impressora 3D CNC: Para criar peças complexas e leves feitas de polímeros, como as partes externas do robô e os encaixes para sensores e placas de circuito. <br>
+
+CNC de Corte a Laser: Usada para cortar e ajustar os circuitos e placas, incluindo a placa-mãe, com alta precisão. <br> </p>
+            
+            <p>Aparelho de Som: </p>
+
+<p>Fresadora CNC: Para usinar a estrutura externa e componentes internos, garantindo que o design acústico seja mantido. <br>
+
+    CNC de Corte a Laser: Para cortar os circuitos e ajustar componentes eletrônicos sensíveis dentro do aparelho, como microfones e alto-falantes, garantindo precisão e minimizando interferências. <br> </p>
+            
+            <p>Aparelho de Cheiro: </p>
+
+<p>Impressora 3D CNC: Usada para criar o corpo do aparelho com polímeros, especialmente para componentes que necessitam de um design específico para a dispersão de aromas. <br>
+
+CNC de Corte a Laser: Para o corte preciso dos circuitos e a montagem dos sensores olfativos dentro do aparelho. <br>
+            
+            <p>Colar de Mudança de Vestimenta e Cores: </p>
+
+<p>Fresadora CNC: Para moldar a estrutura em titânio, garantindo durabilidade e precisão no encaixe dos componentes eletrônicos. <br>
+
+Impressora 3D CNC: Para criar partes leves e flexíveis do colar, feitas de polímeros de alta resistência. <br>
+
+CNC de Corte a Laser: Para o corte preciso de circuitos e componentes eletrônicos, como os sensores de movimento e microfones integrados ao colar. <br> </p>
+            
+        </section>
+        
+
+        <hr style="border: 1px solid #003366;">
+
+        
+
+        <section class="surpresa">
+            <h2>Atenção!</h2>
+            <p>Fique atento às nossas redes sociais! Em breve, vamos postar alguns vídeos para quem acompanha a C.E.S.T.A. Prepare-se para embarcar em novas aventuras com a Cápsula Imersiva!</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>©capsulaimersiva - Quem não quer desvendar o impossivel?</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/capsulaimersiva?igsh=OTNkOHlpYnZndGo4" target="_blank">Instagram</a>
+        </div>
+    </footer>
+
+</body>
+</html>
+
